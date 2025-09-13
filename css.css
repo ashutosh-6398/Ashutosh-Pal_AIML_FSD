@@ -1,0 +1,84 @@
+/* ---------- amazon-clone.css ---------- */
+
+/* ---------- Reset & base ---------- */
+:root{
+  --brand:#e79c2a; /* amazon-ish */
+  --dark:#111;
+  --muted:#666;
+  --card:#fff;
+  --glass: rgba(255,255,255,0.06);
+  --max-width:1200px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:linear-gradient(180deg,#f2f3f5 0%, #fff 100%);
+  color:var(--dark);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+.container{max-width:var(--max-width);margin:0 auto;padding:16px}
+
+/* ---------- Header / Nav ---------- */
+header{background:linear-gradient(90deg,var(--brand),#ffb84d);padding:10px 0;box-shadow:0 2px 6px rgba(0,0,0,0.08)}
+.topbar{display:flex;align-items:center;gap:16px}
+.logo{display:flex;align-items:center;gap:8px;color:#111;font-weight:700}
+.logo .mark{background:#fff;padding:6px 8px;border-radius:4px;font-weight:800;color:var(--brand)}
+
+/* Search */
+.search{flex:1;display:flex;align-items:center;background:rgba(255,255,255,0.95);padding:8px;border-radius:6px}
+.search input{flex:1;border:0;outline:0;font-size:14px;padding:8px}
+.search button{background:var(--brand);border:0;color:#111;padding:9px 12px;border-radius:4px;font-weight:700;cursor:pointer}
+
+/* Icons area */
+.nav-actions{display:flex;gap:12px;align-items:center}
+.nav-actions .btn{background:transparent;border:0;color:#fff;cursor:pointer;font-weight:600}
+.nav-actions .cart{position:relative}
+.nav-actions .count{position:absolute;right:-8px;top:-6px;background:#222;color:#fff;border-radius:50%;padding:2px 6px;font-size:12px}
+
+/* ---------- Hero ---------- */
+.hero{display:grid;grid-template-columns:1fr 380px;gap:16px;align-items:center;padding:24px 0}
+.hero-card{background:linear-gradient(180deg,#fff,#fff);padding:28px;border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,0.06)}
+.hero h1{margin:0;font-size:28px}
+.hero p{color:var(--muted);margin:8px 0 0}
+.hero-cta{margin-top:16px;display:flex;gap:12px}
+.btn-primary{background:var(--brand);color:#111;padding:12px 16px;border-radius:6px;border:0;font-weight:700;cursor:pointer}
+.btn-ghost{background:transparent;border:1px solid #eee;padding:10px 14px;border-radius:6px;cursor:pointer}
+
+/* ---------- Categories ---------- */
+.categories{display:flex;gap:10px;margin:18px 0;flex-wrap:wrap}
+.cat{background:#fff;padding:10px 12px;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.04);font-weight:600}
+
+/* ---------- Product grid ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.card{background:var(--card);border-radius:8px;padding:12px;box-shadow:0 6px 18px rgba(0,0,0,0.04);display:flex;flex-direction:column}
+.card img{width:100%;height:160px;object-fit:contain;border-radius:6px;background:linear-gradient(180deg,#fafafa,#fff)}
+.card .title{font-weight:700;margin:8px 0;font-size:14px}
+.card .price{color:var(--brand);font-weight:800}
+.card .meta{color:var(--muted);font-size:13px;margin-top:6px}
+.card .actions{margin-top:auto;display:flex;gap:8px}
+.card button{flex:1;padding:10px;border-radius:6px;border:0;cursor:pointer}
+.btn-add{background:#ffd95a;color:var(--dark);font-weight:700}
+.btn-buy{background:var(--brand);color:#111;font-weight:700}
+
+/* ---------- Sidebar deals ---------- */
+.deals{background:linear-gradient(180deg,#fff,#fff);padding:16px;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.04)}
+.deals h3{margin:0 0 8px}
+.deal{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid #f0f0f0}
+.deal img{width:64px;height:64px;object-fit:cover;border-radius:6px}
+
+/* ---------- Footer ---------- */
+footer{margin-top:24px;padding:24px 0;color:var(--muted);font-size:14px}
+footer .links{display:flex;gap:14px;flex-wrap:wrap}
+
+/* ---------- Responsive ---------- */
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .hero-illustration{display:none}
+}
+@media (max-width:520px){
+  .search input{font-size:13px}
+  .card img{height:140px}
+}
